@@ -15,7 +15,7 @@ setTheme(localStorage.getItem("liveryTheme") || CONFIG.theme.default);
 window.addEventListener("load", () => {
   setTimeout(() => {
     $("#loader").style.display = "none";
-  }, 1300);
+  }, 500);
 });
 
 const waNumber = CONFIG.whatsapp.replace(/^0/, "62");

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KazeraaID Liveryverse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="bootScreen">
+  <div class="bootNoise"></div>
+  <div class="bootBox">
+    <div class="bootLogo">KZ</div>
+    <h1>KAZERAAID <span>LIVERYVERSE</span></h1>
+    <p>INTERACTIVE TOE3 GARAGE</p>
+    <button id="startExperience">PRESS TO START</button>
+  </div>
+</div>
+
+<div id="systemLoading">
+  <div class="sysBox">
+    <h2>INITIALIZING SYSTEM</h2>
+    <div class="sysBar"><span id="sysProgress"></span></div>
+    <p id="sysText">Loading garage...</p>
+  </div>
+</div>
+
+<div id="enterGarageScreen">
+  <div class="enterBox">
+    <h2 id="enterGarageTitle">ENTERING GARAGE</h2>
+    <div class="sysBar"><span id="enterProgress"></span></div>
+  </div>
+</div>
+
+<div id="achievementToast">
+  <h3>🏆 Achievement</h3>
+  <p id="achievementText">FIRST DOWNLOAD</p>
+</div>
+
+  <div id="loader">
+    <div class="loader-logo" id="loaderLogo">KZ</div>
+    <p id="loaderText">Loading Liveryverse...</p>
+    <div class="loading-bar"><span></span></div>
+  </div>
+
+  <canvas id="particles"></canvas>
+
+  <header class="navbar">
+    <div class="brand" id="brandName">KazeraaID</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#garage">Garage</a>
+      <a href="#creator">Creator</a>
+      <a href="#event">Event</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero reveal">
+    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline></video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="badge">TOE3 Livery Community</span>
+      <h1 id="heroTitle">KazeraaID Liveryverse</h1>
+      <p id="heroDesc"></p>
+
+      <div class="hero-buttons">
+        <a id="waBtn" class="btn primary" target="_blank">Request Livery</a>
+        <a href="#garage" class="btn ghost">Enter Garage</a>
+      </div>
+    </div>
+
+    <div class="hero-card tilt">
+      <img id="heroImage" src="" alt="Hero" />
+    </div>
+  </section>
+
+  <section class="theme-box reveal">
+    <h3>Theme Switcher</h3>
+    <div id="themeButtons"></div>
+  </section>
+
+  <section class="stats reveal">
+    <div><h2 id="stat1">0+</h2><p>Livery</p></div>
+    <div><h2 id="stat2">0+</h2><p>Garage</p></div>
+    <div><h2 id="stat3">0+</h2><p>Download</p></div>
+  </section>
+
+  <section id="garage" class="section reveal">
+    <div class="section-head">
+      <span>Fleet Garage</span>
+      <h2>Pilih Kategori Livery</h2>
+      <p>Pilih kategori, lalu lihat semua livery dan tombol download MediaFire.</p>
+    </div>
+
+    <div id="garageGrid" class="card-grid"></div>
+  </section>
+
+  <section id="creator" class="section reveal">
+    <div class="section-head">
+      <span>Hall Of Fame</span>
+      <h2>Top Creator</h2>
+    </div>
+
+    <div id="creatorGrid" class="card-grid"></div>
+  </section>
+
+  <section id="event" class="section reveal">
+    <div class="section-head">
+      <span>Event</span>
+      <h2>Event & Update</h2>
+    </div>
+
+    <div id="eventList" class="timeline"></div>
+  </section>
+
+  <section class="section reveal">
+    <div class="section-head">
+      <span>Mystery Box</span>
+      <h2>Open Crate</h2>
+    </div>
+
+    <div class="mystery">
+      <button id="openBox" class="btn primary">🎁 Buka Mystery Box</button>
+      <div id="boxResult"></div>
+    </div>
+  </section>
+
+  <section id="faq" class="section reveal">
+    <div class="section-head">
+      <span>FAQ</span>
+      <h2>Pertanyaan Umum</h2>
+    </div>
+
+    <div id="faqList" class="faq"></div>
+  </section>
+  
+  <button id="supportBtn" class="support-btn">
+  ☕ SUPPORT
+</button>
+
+  <footer>
+    <h3 id="footerTitle">KazeraaID Liveryverse</h3>
+    <p>Modern TOE3 Livery Community Website.</p>
+  </footer>
+
+  <div id="musicPlayer" class="music-player">
+    <button id="musicToggle">▶</button>
+    <span id="musicTitle">Night Drive</span>
+    <audio id="audio"></audio>
+  </div>
+
+  <div id="kazeBot" class="bot">
+    <button id="botToggle">🤖</button>
+    <div id="botPanel">
+      <h3 id="botName">KazeBot</h3>
+      <div id="botMessages"></div>
+    </div>
+  </div>
+
+  <a id="floatWa" class="float-wa" target="_blank">WA</a>
+
+  <div id="garageModal" class="garage-modal">
+    <div class="garage-box">
+      <button id="closeGarage" class="close-btn">&times;</button>
+
+      <div class="garage-left">
+        <span class="garage-label">ENTER GARAGE</span>
+        <h2 id="garageName">Stream ST</h2>
+        <p id="garageDesc">Koleksi livery.</p>
+
+        <div class="preview-wrap">
+          <img id="garagePreview" src="" alt="Preview" />
+        </div>
+      </div>
+
+      <div class="garage-right">
+        <div class="garage-info">
+          <h3 id="selectedLiveryName">Pilih Livery</h3>
+
+          <div class="meta">
+            <p><b>Creator:</b> <span id="selectedCreator">-</span></p>
+            <p><b>Version:</b> <span id="selectedVersion">-</span></p>
+            <p><b>Size:</b> <span id="selectedSize">-</span></p>
+            <p><b>Category:</b> <span id="selectedCategory">-</span></p>
+          </div>
+
+          <a id="downloadBtn" class="btn primary disabled" target="_blank">
+            Download Livery
+          </a>
+        </div>
+
+        <div class="search-area">
+          <input id="liverySearch" type="text" placeholder="Cari livery..." />
+        </div>
+
+        <div id="liveryList" class="livery-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="imagePopup" class="popup">
+    <span id="closeImagePopup">&times;</span>
+    <img id="popupImg" src="" alt="Preview" />
+  </div>
+  
+  <audio
+    id="hoverSound"
+    preload="auto">
+</audio>
+
+<audio
+    id="enterSound"
+    preload="auto">
+</audio>
+  
+<audio id="bootAudio"
+src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+
+<audio id="clickAudio"
+src="https://actions.google.com/sounds/v1/cartoon/pop.ogg"></audio>
+
+<audio id="achievementAudio"
+src="https://actions.google.com/sounds/v1/cartoon/concussive_hit_guitar_boing.ogg"></audio>
+
+<audio id="engineAudio"
+src="https://actions.google.com/sounds/v1/transportation/car_engine_start.ogg"></audio>
+
+<audio id="garageAudio"
+src="https://actions.google.com/sounds/v1/ambiences/warehouse.ogg"
+loop></audio>
+  
+<div id="supportModal">
+  <div class="support-box">
+    <button id="closeSupport">×</button>
+    <h2 id="supportTitle"></h2>
+    <p id="supportDesc"></p>
+    <div class="support-list" id="supportList"></div>
+  </div>
+</div>
+
+<div id="qrisModal">
+  <span id="closeQris">×</span>
+  <img id="qrisImage">
+</div>
+  
+    <script src="config.js"></script>
+    <script src="database.js"></script>
+    <script src="script.js"></script>
+  
+</body>
+</html>

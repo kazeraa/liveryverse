@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
 });
 
 const waNumber = CONFIG.whatsapp.replace(/^0/, "62");
-const waLink = `https://wa.me/${waNumber}?text=Halo%20bos,%20saya%20mau%20request%20livery`;
+const waLink = `https://wa.me/${waNumber}?text=Halo%20bos,%20saya%20mau%20order%20livery`;
 
 $("#loaderLogo").textContent = CONFIG.intro.logo;
 $("#loaderText").textContent = CONFIG.intro.text;
